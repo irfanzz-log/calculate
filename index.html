@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+    <div class="calculator">
+        <div class="screen"><input type="text" name="display" id="display" disabled></div>
+        <input type="button" name="seven" value="7" onclick="updateDisplay('7')">
+        <input type="button" name="eight" value="8" onclick="updateDisplay('8')">
+        <input type="button" name="nine" value="9" onclick="updateDisplay('9')">
+        <input type="button" class="operand" name="divide" value="/" onclick="updateDisplay('/')">
+        <input type="button" name="four" value="4" onclick="updateDisplay('4')">
+        <input type="button" name="five" value="5" onclick="updateDisplay('5')">
+        <input type="button" name="six" value="6" onclick="updateDisplay('6')">
+        <input type="button" class="operand" name="multiply" value="*" onclick="updateDisplay('*')">
+        <input type="button" name="one" value="1" onclick="updateDisplay('1')">
+        <input type="button" name="two" value="2" onclick="updateDisplay('2')">
+        <input type="button" name="three" value="3" onclick="updateDisplay('3')">
+        <input type="button" name="minus" value="-" onclick="updateDisplay('-')">
+        <input type="button" class="operand" name="clear" value="C" onclick="clearDisplay()">
+        <input type="button" name="zero" value="0" onclick="updateDisplay('0')">
+        <input type="button" class="operand" name="equal" value="=" onclick="calculate()">
+        <input type="button" class="operand" name="plus" value="+" onclick="updateDisplay('+')">
+        <p>irfanzzs calculate</p>
+    </div>
+    </div>
+
+    <script lang="javascript">
+        var x = prompt('siapa nama anda');
+        alert('selamat datang ' + x + ' di kalkulator online kami :)');
+    </script>
+
+    <script>
+        function updateDisplay(val) {
+            document.getElementById('display').value += val;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            let result = document.getElementById('display').value;
+            try {
+                result = eval(result);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
